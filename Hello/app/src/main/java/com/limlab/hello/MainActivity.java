@@ -31,21 +31,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //클릭카운트를 1회씩 증가시킨다.
                 clickCount++;
-                //버튼이 클리되면 클릭된 횟수를 증가하면서 토스메시지를 보여준다.
-                Toast.makeText(getApplicationContext(),"clickCount : " + clickCount, Toast.LENGTH_SHORT).show();
+
+               // 화면에 보여줄 메세지를 저장할 변수를 선언한다.
+                String text = "";
+
+                for (int i = 0; i < clickCount; i++) {
+                    if (i > 3) {
+                        break;
+                    }
+                    text += "안녕.";
+                }
+                Toast.makeText(getApplicationContext(),text,Toast.LENGTH_SHORT).show();
+
             }
         });
-
-        //변수 var1 을 선언한다.
-        int var1 = 0;
-        {
-            //블록 내에서도 var1 을 접근가능하다.
-            var1 = 2;
-
-            int var2 = 0;
-        }
-        //블록내에서 선언된 변수는 블록밖에서는 접근할 수 없다.
-        var2 = 1;
-
     }
 }

@@ -20,8 +20,9 @@
     <!-- 프로그램 실습을 위한 버튼 -->
     <Button
         android:id="@+id/button"
-        android:text="TEST"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="TEST"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,53 +8,47 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
 
-    // testButton1 의 클릭횟수를 저장하는 변수를 선언한다.
-    int clickCount1 = 0;
+    //가속도가 3, 최고속도가 100, 브레이크속도가 4인 차를 만든다.
+    Car car1 = new Car(3, 100, 4);
 
-    // testButton2 의 클릭횟수를 저장하는 변수를 선언한다.
-    int clickCount2 = 0;
+    //Car2는 스포츠카로 만든다.
+    SportsCar car2 = new SportsCar(10, 50, 8);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        // 프로그래밍을 시작해보자 메세지를 잠시 보여준다.
-        Toast.makeText(getApplicationContext(), "프로그램을 시작해보자!", Toast.LENGTH_SHORT).show();
+        //프로그래밍을 시작해보자 라는 메세지를 잠시 보여준다.
+        Toast.makeText(getApplicationContext(), "프로그램을 시작해보자", Toast.LENGTH_SHORT).show();
 
-        // 레이아웃에 testButton1 ID로 선언된 뷰에 클릭 이벤트 리스너를 등록한다.
         findViewById(R.id.testButton1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 클릭카운트를 1회 증가시킨다.
-                clickCount1++;
-
-                showMessage(clickCount1);
-
+                car1.accelerationPedal();
+                car2.accelerationPedal();
+                String info = "car1: " + car1.getCurrentSpeedText() + ", car2: " + car2.getCurrentSpeedText();
+                Toast.makeText(getApplicationContext(), info, Toast.LENGTH_SHORT).show();
+                //스포츠카의 선루프를 연다.
+                car2.openSunRoof();
+                Toast.makeText(getApplicationContext(), car2.getSunRoofInfo(), Toast.LENGTH_SHORT).show();
             }
         });
 
-        // 레이아웃에 testButton2 ID로 선언된 뷰에 클릭 이벤트 리스너를 등록한다.
         findViewById(R.id.testButton2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 클릭카운트를 1회 증가시킨다.
-                clickCount2++;
+                car1.brakePedal();
+                car2.brakePedal();
+                String info = "car1: " + car1.getCurrentSpeedText() + ", car2: " + car2.getCurrentSpeedText();
+                Toast.makeText(getApplicationContext(), info, Toast.LENGTH_SHORT).show();
 
-                showMessage(clickCount2);
-
+                //스포츠카의 선루프를 닫는다.
+                car2.closeSunRoof();
+                Toast.makeText(getApplicationContext(), car2.getSunRoofInfo(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    // 함수에 전달받은 클릭횟수로 조건에 따라 메세지를 보여준다.
-    void showMessage(int clickCount) {
-        if (clickCount % 2 == 0) {
-            Toast.makeText(getApplicationContext(), "클릭횟수 : " + clickCount, Toast.LENGTH_SHORT).show();
-        } else if (clickCount % 3 == 0) {
-            Toast.makeText(getApplicationContext(), "Hello, World!", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "Hello~", Toast.LENGTH_SHORT).show();
-        }
-    }
+
 }

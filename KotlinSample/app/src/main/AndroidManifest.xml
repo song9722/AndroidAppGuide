@@ -9,23 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Activity의 label은 기본제목으로 사용됩니다. -->
+        </activity> <!-- Activity의 label은 기본제목으로 사용됩니다. -->
         <activity
             android:name=".BmiJavaActivity"
             android:label="BmiJavaActivity" />
         <activity
             android:name=".BmiKotlinActivity"
             android:label="BmiKotlinActivity" />
+        <activity
+            android:name=".VariableJavaActivity"
+            android:label="VariableJava"/>
 
+        <activity
+            android:name=".VariableKotlinActivity"
+            android:label="VarialbleKotlin" />
     </application>
 
 </manifest>

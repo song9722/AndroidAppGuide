@@ -3,6 +3,7 @@
     package="com.limlab.kotlinsample">
 
     <application
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -24,11 +25,19 @@
             android:label="BmiKotlinActivity" />
         <activity
             android:name=".VariableJavaActivity"
-            android:label="VariableJava"/>
-
+            android:label="VariableJava" />
         <activity
             android:name=".VariableKotlinActivity"
             android:label="VarialbleKotlin" />
+
+        <activity
+            android:name=".ControlKotlinActivity"
+            android:label="ControlKotlin"/>
+        <activity
+            android:name=".ControlJavaActivity"
+            android:label="ControlJava"/>
+
+
     </application>
 
 </manifest>

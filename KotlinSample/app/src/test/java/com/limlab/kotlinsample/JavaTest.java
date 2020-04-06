@@ -9,4 +9,9 @@ public class JavaTest {
         String lastString = StringExtKt.lastString("apple");
         Assert.assertEquals("e", lastString);
     }
+
+    @Test
+    public void testNullType() {
+        Assert.assertEquals(true, null instanceof String);
+    }
 }

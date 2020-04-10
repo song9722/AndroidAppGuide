@@ -10,6 +10,6 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        Toast.makeText(applicationContext, "ResultActivity 입니다.", Toast.LENGTH_LONG).show()
+
     }
 }

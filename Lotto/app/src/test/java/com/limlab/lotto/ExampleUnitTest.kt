@@ -11,7 +11,17 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun testShuffleLottoNumbers(){
+        val list = mutableListOf<Int>()
+
+        for (num in 1..45) {
+            list.add(num)
+        }
+
+        list.shuffle()
+
+        println(list.subList(0, 6))
     }
+
+
 }

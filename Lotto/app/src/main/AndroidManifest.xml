@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ResultActivity" />
-        <activity android:name=".NameActivity" />
-        <activity android:name=".ConstellationActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +17,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--AppTheme.Constellation 테마지정-->
+        <activity android:name=".ConstellationActivity"
+            android:theme="@style/AppTheme.Constellation"/>
+        <!--AppTheme.Result 테마지정-->
+        <activity android:name=".ResultActivity"
+            android:theme="@style/AppTheme.Result"/>
+        <!--AppTheme.Name 테마지정-->
+        <activity android:name=".NameActivity"
+            android:theme="@style/AppTheme.Name"/>
     </application>
 
 </manifest>

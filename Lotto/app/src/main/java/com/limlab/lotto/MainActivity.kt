@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         randomCard.setOnClickListener {
             val intent = Intent(this, ResultActivity::class.java)
-            intent.putIntegerArrayListExtra("result", ArrayList(getRandomLottoNumbers()))
+            intent.putIntegerArrayListExtra("result", ArrayList(LottoNumberMaker.getShuffleLottoNumbers()))
             startActivity(intent)
         }
 
@@ -29,33 +29,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getRandomLottoNumber(): Int {
-        return Random().nextInt(45) + 1
-    }
-
-    private fun getRandomLottoNumbers(): MutableList<Int> {
-        val lottoNumbers = mutableListOf<Int>()
-
-        for (i in 1..6) {
-            var num = 0
-            do {
-                num = getRandomLottoNumber()
-            } while (lottoNumbers.contains(num))
-
-            lottoNumbers.add(num)
-        }
-        return lottoNumbers
-    }
-
-    fun getShuffleLottoNumbers(): MutableList<Int> {
-        val list = mutableListOf<Int>()
-
-        for (num in 1..45) {
-            list.add(num)
-        }
-
-        list.shuffle()
-
-        return list.subList(0, 6)
-    }
 }

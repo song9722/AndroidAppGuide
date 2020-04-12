@@ -1,5 +1,6 @@
 package com.limlab.lotto
 
+import org.junit.Assert
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -11,17 +12,11 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
     @Test
-    fun testShuffleLottoNumbers(){
-        val list = mutableListOf<Int>()
+    fun testMakeConstellationString(){
 
-        for (num in 1..45) {
-            list.add(num)
-        }
-
-        list.shuffle()
-
-        println(list.subList(0, 6))
     }
+
+
 
 
 }

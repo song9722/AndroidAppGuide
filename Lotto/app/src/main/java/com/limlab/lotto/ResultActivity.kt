@@ -2,8 +2,12 @@ package com.limlab.lotto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_result.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ResultActivity : AppCompatActivity() {
 
@@ -14,6 +18,22 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_result)
 
         val result = intent.getIntegerArrayListExtra("result")
+
+        val name = intent.getStringExtra("name")
+
+        val constellation = intent.getStringExtra("constellation")
+
+        resultLabel.text = "랜덤으로 생성된 \n로또번호 입니다."
+
+        if (!TextUtils.isEmpty(name)) {
+            resultLabel.text = "${name}님의 \n${SimpleDateFormat("yyyy년 MM월 dd일").format(Date())}\n" +
+                    "로또번호 입니다."
+        }
+
+        if (!TextUtils.isEmpty(constellation)) {
+            resultLabel.text = "${constellation}의\n ${SimpleDateFormat("yyyy년 MM월 dd일").format(Date())}\n" +
+                    "로또번호 입니다."
+        }
 
         result?.let{
             updateLottoBallImage(result.sortedBy { it })

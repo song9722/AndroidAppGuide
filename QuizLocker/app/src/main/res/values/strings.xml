@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">QuizLocker</string>
+    <!-- 환경설정창에서 퀴즈종류로 사용할 문자배열 -->
+    <string-array name="category">
+        <item>일반상식</item>
+        <item>역사</item>
+        <item>수도</item>
+    </string-array>
 </resources>

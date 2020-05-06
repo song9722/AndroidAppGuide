@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">펀치력테스트</string>
+    <string name="측정중">펀치력을 측정하고 있습니다</string>
+    <string name="측정전">핸드폰을 손에 쥐고 주먹을 내지르세요</string>
+</resources>

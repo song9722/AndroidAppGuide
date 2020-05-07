@@ -39,8 +39,8 @@ class MainActivity : AppCompatActivity() {
                 // 각 좌표값을 제곱하여 음수값을 없애고, 값의 차이를 극대화
                 val power = event.values[0].toDouble().pow(2.0) + event.values[1].toDouble().pow(2.0) + event.values[2].toDouble().pow(2.0)
 
-                // 측정된 펀치력이 20 을 넘고 아직 측정이 시작되지 않은 경우
-                if (power > 20 && !isStart) {
+                // 측정된 펀치력이 200 을 넘고 아직 측정이 시작되지 않은 경우
+                if (power > 200 && !isStart) {
                     // 측정시작
                     startTime = System.currentTimeMillis()
                     isStart = true
